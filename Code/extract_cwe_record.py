@@ -76,6 +76,14 @@ def extract_cwe():
         'url': 'https://nvd.nist.gov/vuln/categories',
         'is_category': False
     })
+    rows.append({
+    'cwe_id': 'NVD-CWE-1026',
+    'cwe_name': 'CWE VIEW: Weaknesses in OWASP Top Ten (2017)',
+    'description': 'NVD is only using a subset of CWE for mapping instead of the entire CWE, and the weakness type is not covered by that subset.',
+    'extended_description': 'Insufficient Information',
+    'url': 'https://cwe.mitre.org/data/definitions/1026.html',
+    'is_category': False
+    })
 
     df_cwe = pd.DataFrame.from_dict(rows)
     df_cwe = df_cwe.drop_duplicates(subset=['cwe_id']).reset_index(drop=True)
